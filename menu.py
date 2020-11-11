@@ -15,8 +15,15 @@ class menu:
     def button4(self=None):
         from sistemasLineares.iterativos import iterativos    
     
+    def button5(self=None):
+        from interpolacaoPolinomial.lagrange import lagrange
 
-    dispatch_dictionary = {'Bisseção':button1, 'Newton':button2, 'Direto':button3, 'Iterativos':button4}
+    def button6(self=None):
+        from interpolacaoPolinomial.newton import newton
+
+
+
+    dispatch_dictionary = {'Bisseção':button1, 'Newton':button2, 'Direto':button3, 'Iterativos':button4, 'de Lagrange':button5, 'de Newton':button6}
     layout = [[sg.Text('Zero de função', auto_size_text=True)],
             [sg.Button('Bisseção'), sg.Button('Newton')], 
             [sg.Text( )],
@@ -24,6 +31,12 @@ class menu:
             [sg.Text('Sistemas Lineares')],
             [sg.Button('Direto'), sg.Button('Iterativos')],
 
+            [sg.Text( )],
+
+            [sg.Text('Interpolação Polinomial')],
+            [sg.Button('de Lagrange'), sg.Button('de Newton')],
+            
+            [sg.Text( )],
             [sg.Text( )],
             [sg.Quit('Encerrar')]]
 
