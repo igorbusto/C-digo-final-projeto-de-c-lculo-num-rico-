@@ -1,4 +1,5 @@
-from sympy import *
+#from sympy import *
+import numpy as np
 import PySimpleGUI as sg
 import time
 
@@ -23,6 +24,13 @@ class diretos:
             #formula = self.values[0]
             #xZero = self.values[1]
             #e = self.values[2]
+
+            A = np.array([[1,1],[-3,1]])
+            B = np.array([[6],[2]])
+
+            print(A)
+            print()
+            print(B)
 
             if self.event in (None, 'Sair'):
                 break
