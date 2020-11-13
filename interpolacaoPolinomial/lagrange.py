@@ -4,7 +4,6 @@ from itertools import product
 class lagrange:
     def __init__(self):
         layout = [
-            #[sg.Text('                                         Método de Newton', size = (50,0))],
             [sg.Text(' ')],
             [sg.Text('f(x):', size = (3,0)), sg.Input(size = (15,0))],
 
@@ -51,21 +50,11 @@ class lagrange:
                 final = y[j]*instancia + final
             print('Resultado final: ', final)
                 
-
-
-                    
-        
-            
-    
             if self.event in (None, 'Sair'):
                 break
 
         self.janela.Close()
         sg.popup_ok('Interpolação Polinomial de Lagrange finalizado!')
-          
-    def execLagrange(self, x, fx):                                                             
-        L = lambda num, xi: product((num - xj) / (xi - xj) for xj in x if xj != xi)                                                                               
-        return lambda num: sum([yi * L(num, xi) for xi, yi in zip(x, fx)])
 
 
 tela = lagrange()
