@@ -9,7 +9,7 @@ class diretos:
     def __init__(self):
         layout = [
             #[sg.Text(' ')],
-            [sg.Text('Direto:', size = (7,0))],
+            [sg.Text('Gaus e LU:', size = (10,0))],
             [sg.Output(size = (80,20))],
             [sg.Button('Executar'), sg.Quit('Sair')],
         ]
@@ -55,9 +55,6 @@ class diretos:
         """
         # tamanho das linhas e colunas da matriz quadrada M
         n = len(M)
-        '''if b.size != n:
-            raise ValueError(f"Inválido: b deve ser n x 1 e M deve ser n x n. Recebido: b {b.size}x1 e M {n}x{n}")
-        '''
 
         for linha_pivot in range(n-1):
             for linha in range(linha_pivot+1, n):
@@ -86,7 +83,6 @@ class diretos:
         # Variáveis
         L = []      # Matriz L    
         U = a       # Matriz U
-        #P = 1
 
         # Geração da matriz L: gera uma matriz identidade de ordem n que será preenchida posteriormente
         for i in range (len(U)):
@@ -101,8 +97,6 @@ class diretos:
             pivot = U[k][k]
             print('pivô: ', pivot)
 
-            # Salvo a linha do pivo para realizar a operação de troca
-            #pivot_line = k
 
             for i in range(k+1, len(U)):
                 # Verifico se o pivô é o maior elemento da coluna
@@ -114,22 +108,6 @@ class diretos:
             if pivot == 0:
                 break
             
-            # Se a linha do pivô não for a linha atual: troco as linhas
-            '''if pivot_line != k:
-                for j in range (len(U)):
-                    swap = U[k][j]
-                    U[k][j] = U[pivot_line][j]
-                    U[pivot_line][j] = swap
-                    P = P * (-1)
-
-                # Troca os elementos da matriz de segundo termo
-                for b in b_list:
-                    swap = b[k]
-                    b[k] = b[pivot_line]
-                    b[pivot_line] = swap
-            '''
-            # Realiza pivoteamento parcial              
-            #partialPivoting(U,k)
 
         # Popula matriz L
         for col in range(len(U)):

@@ -23,13 +23,13 @@ class menu:
 
 
 
-    dispatch_dictionary = {'Bisseção':button1, 'Newton':button2, 'Direto':button3, 'Iterativos':button4, 'de Lagrange':button5, 'de Newton':button6}
+    dispatch_dictionary = {'Bisseção':button1, 'Newton':button2, 'LU e Gauss':button3, 'Jacobi e Gauss-Seidel':button4, 'de Lagrange':button5, 'de Newton':button6}
     layout = [[sg.Text('Zero de função', auto_size_text=True)],
             [sg.Button('Bisseção'), sg.Button('Newton')], 
             [sg.Text( )],
 
             [sg.Text('Sistemas Lineares')],
-            [sg.Button('Direto'), sg.Button('Iterativos')],
+            [sg.Button('LU e Gauss'), sg.Button('Jacobi e Gauss-Seidel')],
 
             [sg.Text( )],
 
